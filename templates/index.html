@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BW Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <h1 class="text-center text-success" style="color: black;">Let's predict the Birth Weight of the baby in your Womb!</h1>
+
+    <div class="container mt-4 my-4" style=" background-image: url('https://images.squarespace-cdn.com/content/v1/60464e1ff27cb04d7b5ed466/1616065409361-W0WNHAGYXB0WAGG4JA3L/Stefanie-Cole-Photography-New-Born-Baby-Ella%C4%97'); background-size: cover; background-position: center; background-color: rgba(0, 0, 0, 0.5); border-radius: 20px; color:white">
+        <h1 class="text-center text-success" style="color: black;">Enter Mothers Details</h1>
+        <form action="/predict" method="post">
+    <div class="form-group">
+        <label for="Age_years">Age_years</label>
+        <input type="number" class="form-control" name="Age_years" step="any">
+    </div>
+    <div class="form-group">
+        <label for="Height_cm">Height_cm</label>
+        <input type="number" class="form-control" name="Height_cm" step="any" >
+    </div>
+    <div class="form-group">
+        <label for="Parity">Parity</label>
+        <input type="number" class="form-control" name="Parity" step="any" >
+    </div>
+    <div class="form-group">
+        <label for="ANC">ANC</label>
+        <input type="number" class="form-control" name="ANC" step="any" >
+    </div>
+    <div class="form-group">
+        <label for="Iwt_kg">Iwt_kg</label>
+        <input type="number" class="form-control" name="Iwt_kg" step="any" >
+    </div>
+    <div class="form-group">
+        <label for="FWt_kg">FWt_kg</label>
+        <input type="number" class="form-control" name="FWt_kg" step="any" >
+    </div>
+    <div class="form-group">
+        <label for="IBP_sys">IBP_sys</label>
+        <input type="number" class="form-control" name="IBP_sys" step="any" >
+    </div>
+    <div class="form-group">
+        <label for="IBP_dias">IBP_dias</label>
+        <input type="number" class="form-control" name="IBP_dias" step="any" >
+    </div>
+    <div class="form-group">
+        <label for="FBP_sys">FBP_sys</label>
+        <input type="number" class="form-control" name="FBP_sys" step="any" >
+    </div>
+    <div class="form-group">
+        <label for="FBP_dias">FBP_dias</label>
+        <input type="number" class="form-control" name="FBP_dias" step="any" >
+    </div>
+    <div class="form-group">
+        <label for="IHb_gm">IHb_gm</label>
+        <input type="number" class="form-control" name="IHb_gm" step="any" >
+    </div>
+    <div class="form-group">
+        <label for="FHb_gm">FHb_gm</label>
+        <input type="number" class="form-control" name="FHb_gm" step="any" >
+    </div>
+    <div class="form-group">
+        <label for="BS_RBS">BS_RBS</label>
+        <input type="number" class="form-control" name="BS_RBS" step="any">
+    </div>
+    <div class="form-group">
+        <label for="LNH">LNH</label>
+        <input type="number" class="form-control" name="LNH" step="any">
+    </div>
+    <div class="form-group">
+        <label for="Bgroup">Bgroup</label>
+        <input type="text" class="form-control" name="Bgroup" >
+    </div>
+    <div class="form-group">
+        <label for="Term_Preterm">Term_Preterm</label>
+        <input type="text" class="form-control" name="Term_Preterm" >
+    </div>
+    <button type="submit" class="btn btn-danger btn-lg mt-2 btn-block">Predict</button>
+</form>
+        {% if prediction %}
+      <h1 class="text-center"> Predicted Weight(kg): <br>{{prediction}}</h1>
+
+      {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
